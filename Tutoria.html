@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=4">
+
+  <!-- Bootstrap -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- JQuery --->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <title>Concertar una Tutoria</title>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <!-- Main component for a primary marketing message or call to action -->
+    <div class="jumbotron" align="center">
+      <h1>CONCERTAR UNA TUTORIA</h1>
+    </div>
+    <form action=http:\\192.168.1.148:8080/servlet/Tutoria method=POST>
+
+
+      <div class="input-group" >
+        <span class="input-group-addon" id="basic-addon1">Alumno</span>
+        <input type="text" class="form-control" placeholder="Nombre..." name="alumno" id="alumno" size=60 aria-describedby="basic-addon3">
+      </div>
+      <br>
+
+      <div class="form-group">
+        <label for="sel1">Con el profesor:</label>
+        <select class="form-control" size="1" name="profesor" id="profesor">
+          <option>Profesor de Programacion</option>
+          <option>Profesor de Redes</option>
+          <option>Profesor de Matematicas</option>
+          <option>Profesor de Compiladores</option>
+          <option>Profesor de DHI</option>
+        </select>
+      </div>
+ 
+      <div class="form-group">
+        <label for="sel1">Dia:</label>
+        <select class="form-control" size="1" name="dia" id="dia">
+          <option>Lunes</option>
+          <option>Martes</option>
+          <option>Miercoles</option>
+          <option>Jueves</option>
+          <option>Viernes</option>
+        </select>
+      </div>
+      <br>
+
+      <label for="sel1">Hora:</label>&nbsp;&nbsp;&nbsp;&nbsp;
+      <label class="radio-inline"><input type="radio" name="rb" value="10">10:00 AM</label>
+      <label class="radio-inline"><input type="radio" name="rb" value="12">12:00 PM</label>
+      <label class="radio-inline"><input type="radio" name="rb" value="16">16:00 PM</label>
+      <label class="radio-inline"><input type="radio" name="rb" value="18">18:00 PM</label>
+
+      <!--<input type="radio" name="rb" value="1">Valor 1
+      <input type="radio" name="rb" value="2">Valor 2
+      <input type="radio" name="rb" value="3">Valor 3 -->
+
+      <br>
+
+      <br>
+      <label for="sel1">Asunto:</label>&nbsp;
+      <textarea name="asunto" id="asunto" class="form-control" rows="3" cols="40" wrap></textarea>
+      <br>
+      <br>
+
+      <div align="center">
+      <input type="submit" class="btn btn-primary" value="Enviar datos"></input>&nbsp;&nbsp;
+      <input type="reset" class="btn btn-danger">
+      </div>
+
+    </form>
+
+  </div>
+
+
+  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=2">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+  <script src="js/jquery-3.2.1.min.js"></script>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+  <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-blue.min.css" />
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+  <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+  <title>Concertar un Articulo</title>
+
+  <script>
+    function operacion() {
+      var prc = document.getElementById("prc").value;
+      var prv = document.getElementById("prv").value;
+      var cant = document.getElementById("cant").value;
+
+      $("#ganancia").val("" + ( (parseInt(prv) - parseInt(prc) ) * parseInt(cant)));
+
+    }
+  </script>
+
+</head>
+
+<body>
+  <h1 align="center">
+    <font face="Arial">CONCERTAR UN ARTICULO</font>
+  </h1>
+  <form action=http:\\192.168.1.148:8080/servlet/Articulo method=POST align="center">
+
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input name="clave" class="mdl-textfield__input" type="text" id="sample3">
+      <label class="mdl-textfield__label" for="sample3">Clave...</label>
+    </div>
+
+    &nbsp;&nbsp;
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input name="nombre" class="mdl-textfield__input" type="text" id="sample3">
+      <label class="mdl-textfield__label" for="sample3">Nombre...</label>
+    </div>
+
+    <br>
+    <div class="mdl-textfield mdl-js-textfield">
+      <textarea name="desc" class="mdl-textfield__input" type="text" rows="3" id="sample5"></textarea>
+      <label class="mdl-textfield__label" for="sample5">Descripcion..</label>
+    </div>
+
+    <br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input name="cant" class="mdl-textfield__input" type="text" id="cant">
+      <label class="mdl-textfield__label" for="sample3">Cantidad...</label>
+    </div>
+
+    &nbsp;&nbsp;
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input name="prc" class="mdl-textfield__input" type="number" id="prc">
+      <label class="mdl-textfield__label" for="sample3">Precio de compra...</label>
+    </div>
+
+    <br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input name="prv" class="mdl-textfield__input" type="number" id="prv">
+      <label class="mdl-textfield__label" for="sample3">Precio de venta...</label>
+    </div>
+
+    <br>
+    <input type="button" onclick="operacion();" value="Calcular" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+
+    <br>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input name="ganancia" id="ganancia" class="mdl-textfield__input">
+      <label class="mdl-textfield__label"></label>
+    </div>
+
+    <br>
+    <button value="Enviar datos" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+      Registrar
+    </button>
+
+    &nbsp;&nbsp;
+    <input type="button" value="reset" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+
+  </form>
+</body>
+
+</html>
