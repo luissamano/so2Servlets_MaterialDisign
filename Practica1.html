@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!-- Bootstrap -->
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  
+    <!-- JQuery --->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
+    <script src="js/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.red-blue.min.css" />
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Roboto:300,400,500,700" type="text/css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+
+
+    <script>
+    function calhoras() {
+        var horasl = document.getElementById("horasl").value;
+        var horasp = document.getElementById("horasp").value;
+
+        var horase;
+        var sueldos;
+        var sueldon;
+
+
+        if (horasl == 40)
+        {
+            horase = 0;
+            sueldos = horasl * horasp;
+            sueldon = horasl * horasp;
+        }
+        else if (horasl >= 41)
+        {
+            horase = horasl - 40;
+            sueldos = ( 40 * horasp);
+            sueldon = (( 40 * (horasl + horase) * horasp));
+        }
+        else
+        {
+            window.alert("El trabajador debe laborar minimo 40 horas");
+            horase = 0;
+            sueldos = 0;
+            sueldon = 0;
+        }
+
+        $("#horase").val("" +horase );
+        $("#sueldos").val("" +sueldos );
+        $("#sueldon").val("" +sueldon );
+
+
+    }</script>
+
+    <title>Practica 1</title>
+</head>
+<body>
+    <div class="jumbotron" align="center">
+        <h1>Examen 1er. Parcial</h1>
+      </div>
+  <form action=http:\\192.168.1.148:8080/servlet/Parcial1 method="post" align="center">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input name="clave" class="mdl-textfield__input" type="text" id="clave">
+          <label class="mdl-textfield__label" for="sample3">Clave...</label>
+      </div>
+
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input value="40" type="number" name="horasl" id="horasl" placeholder="Horas trabajadas">
+      </div>
+
+      <br>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input name="nombre" class="mdl-textfield__input" type="text" id="nombre">
+          <label class="mdl-textfield__label" for="sample3">Nombre...</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input name="horasp" class="mdl-textfield__input" type="text" id="horasp">
+          <label class="mdl-textfield__label" for="sample3">Pago por hora...</label>
+      </div>
+
+
+      <br>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input name="appp" class="mdl-textfield__input" type="text" id="appp">
+          <label class="mdl-textfield__label" for="sample3">Apeliido paterno...</label>
+      </div>      
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input name="appm" class="mdl-textfield__input" type="text" id="appm">
+          <label class="mdl-textfield__label" for="sample3">Apeliido materno...</label>
+      </div>
+
+      <br>
+    <input type="button" onclick="calhoras();" value="Calcular" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+    
+
+      <br>
+      <br>&nbsp;&nbsp;
+      <div class="col-6">
+          <label class="mr-sm-2" for="inlineFormCustomSelect">Depto: </label>
+          <select  class="selectpicker" id="depto" name="depto">
+              <option selected>Elegir...</option>
+              <option value="1">Administración</option>                                
+              <option value="2">Contabilidad</option>
+              <option value="3">Derecho</option>
+              <option value="3">Ing. en computación</option>                                
+              <option value="4">Turismo</option>
+          </select>
+      </div>
+
+      <br>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input name="horase" class="mdl-textfield__input" type="text" id="horase">
+          <label class="mdl-textfield__label" for="sample3">Horas extras...</label>
+      </div>      
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input name="sueldos" class="mdl-textfield__input" type="text" id="sueldos">
+          <label class="mdl-textfield__label" for="sample3">Sueldo semanal...</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <input name="sueldon" class="mdl-textfield__input" type="text" id="sueldon">
+          <label class="mdl-textfield__label" for="sample3">Sueldo Neto...</label>
+      </div>
+
+      <br>
+      <button value="Enviar datos" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Registrar empleado
+      </button>
+  
+      &nbsp;&nbsp;
+      <input type="button" value="reset" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+
+      <br><br><br><br>
+      <footer>Samano Cedillo - 2018</footer>
+
+  </form>
+
+
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="js/bootstrap.min.js"></script>
+</body>
+</html>
